@@ -8,7 +8,6 @@
 4. 터미널->pip install django  
 5. 터미널->pip install djangorestframework  
 6. 좌측의 extension을 클릭한 후 mysql 검색 후 2개의 원통으로 되있는 이모티콘 다운로드   
-
 ```
 
 ### 2.터미널 실행방법(venv/Scripts/activate 기준 ) 
@@ -20,7 +19,6 @@
 ```  
 1. http://127.0.0.1:8000/createReview/ --> 리뷰작성창  
 2. http://127.0.0.1:8000/polls/ --> 결과창  
-
 ```
 ### 4.How to git lddance 
 ```  
