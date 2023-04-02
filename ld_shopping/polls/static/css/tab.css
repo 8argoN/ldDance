@@ -1,0 +1,39 @@
+
+.tab-area {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+
+  .tab-area input {
+    display: none;
+  }  
+  section {
+    display: none;
+    padding: 20px 30 0;
+    left: 0;
+    }
+    
+  .tab-area label {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tab-area label:hover {
+    cursor: pointer; 
+    background: silver;
+  }
+  
+
+  input:checked + label {
+    border-bottom: 1px solid #ffffff;}
+
+  #tab1:checked ~ #detail_cmt1,
+  #tab2:checked ~ #detail_cmt2,
+  #tab3:checked ~ #detail_cmt3
+  {
+    display: block;
+  }
+  

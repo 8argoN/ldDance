@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Project</title>
+    <link rel="stylesheet" href="static/css/project_nav.css">
+    <link rel="stylesheet" href="static/css/project_img.css">
+    <link rel="stylesheet" href="static/css/project_modal.css">
+    <link rel="stylesheet" href="static/css/new.css">
+    <link rel="stylesheet" href="static/css/category.css">
+    <link rel="stylesheet" href="static/css/sideBar.css">
+    <link rel="stylesheet" href="static/css/button.css">
+    <link rel="stylesheet" href="static/css/tab.css">
+    <link rel="stylesheet" href="static/css/reView.css">
+</head>
+
+<body>
+    <!-- 기본화면 -->
+    <div id="container">
+        <!-- 네비게이션바 -->
+        <div id="navigationBar">
+            <nav>
+                <div class="title_list">
+                    <ul>
+                        <li onclick="scrollMove_best()"><span>Best</span></li>
+                        <li onclick="scrollMove_new()"><span>New</span></li>
+                    </ul>
+                </div>
+                <div id="title_logo">
+                    <span><a href="projet.html">Last Dance</a></span>
+                </div>
+                <div class="title_list">
+                    <ul>
+                        <li onclick="scrollMove_category()"><span>Category</span></li>
+                        <li><span>My</span></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- 사진 들어갈곳 -->
+        <div class="b_img">
+            <div id="best">
+                <div id="best_title">
+                    <span>Best</span>
+                </div>
+                <div id="best_image">
+                    <div class="best_category">
+                        <div id="c_outer" onclick="category_outer()"><span>Outer</span></div>
+                        <div id="c_top" onclick="category_top()"><span>Top</span></div>
+                        <div id="c_bottom" onclick="category_bottom()"><span>Bottom</span></div>
+                    </div>
+                    <!-- Outer -->
+                    <div class="boxes" id="outer">
+                        <div class="box">
+                            <!-- 사진 커버 -->
+                            <div class="over" id="outer1" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>[Cover Biker 배색 레더 미니멀 자켓</span>
+                                    </div>
+                                    <div>124,000원</div>
+                                </div>
+                            </div>
+                            <!-- 실제 사진 -->
+                            <div class="img_box">
+                                <img src="static/images/outer_image1.jpeg" alt="image1">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="over" id="outer2" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>Western 데님 워싱 트러커 자켓</span>
+                                    </div>
+                                    <div>99,900원</div>
+                                </div>
+                            </div>
+                            <div class="img_box">
+                                <img src="static/images/outer_image2.jpeg" alt="image2">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="over" id="outer3" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>VL crown 자수 카라 가디건</span>
+                                    </div>
+                                    <div>52,200원</div>
+                                </div>
+                            </div>
+                            <div class="img_box">
+                                <img src="static/images/outer_image3.jpeg" alt="image3">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Top -->
+                    <div class="boxes" id="top">
+                        <div class="box">
+                            <div class="over" id="top1" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>Daily 이너웨이 유넥 기본티</span>
+                                    </div>
+                                    <div>11,900원</div>
+                                </div>
+                            </div>
+                            <div class="img_box">
+                                <img src="static/images/top_image1.jpeg" alt="image1">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="over" id="top2" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>논페이드 세미오버핏 데님 셔츠</span>
+                                    </div>
+                                    <div>43,000원</div>
+                                </div>
+                            </div>
+                            <div class="img_box">
+                                <img src="static/images/top_image2.jpeg" alt="image2">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="over" id="top3" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>고밀도 Beyond Pay 오버핏 자수 맨투맨</span>
+                                    </div>
+                                    <div>46,800원</div>
+                                </div>
+                            </div>
+                            <div class="img_box">
+                                <img src="static/images/top_image3.jpeg" alt="image3">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bottom -->
+                    <div class="boxes" id="bottom">
+                        <div class="box">
+                            <div class="over" id="bottom1" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>[ 2color ] 웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+                                    </div>
+                                    <div>48600원</div>
+                                </div>
+                            </div>
+                            <div class="img_box">
+                                <img src="static/images/bottom_image1.jpeg" alt="image1">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="over" id="bottom2" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>Dopmingo 워싱 유니크 흑청 데님 와이드 팬츠2445</span>
+                                    </div>
+                                    <div>57400원</div>
+                                </div>
+                            </div>
+                            <div class="img_box">
+                                <img src="static/images/bottom_image2.jpeg" alt="image2">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="over" id="bottom3" onclick="getId(this.id)">
+                                <div class="content">
+                                    <div>
+                                        <span>This is YuG 브라우너 빈티지 데님팬츠</span>
+                                    </div>
+                                    <div>52,000원</div>
+                                </div>
+                            </div>
+                            <div class="img_box">
+                                <img src="static/images/bottom_image3.jpeg" alt="image3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New -->
+        <div id="new">
+            <div id="new_title"><span>NEW</span></div>
+            <div id="new_contents">
+                <div id="new_img">
+                    <div id="new_line1" class="new_line">
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="new_line2" class="new_line">
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="new_line3" class="new_line">
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="more">
+                    <a href="#" class="button-48"><span>더보기>></span></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Category -->
+        <div id="category">
+            <div id="category_title"><span>CATEGORY</span></div>
+            <div id="category_contents">
+                <div id="category_img">
+                    <div id="category_line1" class="category_line">
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="category_line2" class="category_line">
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="category_line3" class="category_line">
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+                        </div>
+                        <div class="img_contents">
+                            <img src="static/images/bottom_image1.jpeg" alt="">
+                            <div>
+                                <p>name</p>
+                                <p>price</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="more">
+                    <a href="#" class="button-48"><span>더보기>></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달창 -->
+    <!-- Modal_Outer -->
+    <div class="modal" id="modal_outer1">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="static/images/outer_detail/outer1_1.jpeg" alt=""></div>
+                    <div><img src="static/images/outer_detail/outer1_2.jpeg" alt=""></div>
+                    <div><img src="static/images/outer_detail/outer1_3.jpeg" alt=""></div>
+                    <div><img src="static/images/outer_detail/outer1_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <div><label style="color: white;">색상 &nbsp;&nbsp;</label>
+                <select>
+                    <option>Brown</option>
+                    <option>Black</option>
+                </select><br>
+                <label style="color: white;">사이즈</label>
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select><br>
+                <label style="color: white;">수량 &nbsp;&nbsp;
+                    <input type="number" min="0" max="999" value="1">
+                </label>
+            </div>
+            <div>
+                <button class="buy_Btn" type="button" onclick="javascript:BuyButton()">구매</button>
+            </div>
+
+            <!-- tab menu -->
+            <div class="tab-area">
+                <input type="radio" name="tabs" id="tab1" checked>
+                <label for="tab1" style="color: white;">상세설명</label>
+                
+                <input type="radio" name="tabs" id="tab2">
+                <label for="tab2" style="color: white;">구매후기</label>
+
+                <section id="detail_cmt1">
+                <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+                <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+                <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+                <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+                </section>
+                <section id="detail_cmt2" >
+                    {% for review in reviewList %}
+                    <div style="height: 500px; overflow: auto">
+                    <p><table border="1" width="500">
+                    <h3 style="color: white;">{{ review.u_id}} </h3>
+                    <h6 style="color: grey;">{{ review.r_star }}</h6>
+                    <h5 style="color: grey;">{{ review.r_title }}</h5>
+                    <h6 style="color: grey;">{{ review.r_size }}</h6>
+                    <div><img src="static/images/outer_detail/outer1_1.jpeg" width="50"></div>
+                    <h4 style="color: white;">{{ review.r_content }}</h4>
+                    {% endfor %}
+                </table>
+                </p>                          
+            </div>   
+                </section>
+                </div>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+    <div class="modal" id="modal_outer2">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="images/outer_detail/outer2_1.jpeg" alt=""></div>
+                    <div><img src="images/outer_detail/outer2_2.jpeg" alt=""></div>
+                    <div><img src="images/outer_detail/outer2_3.jpeg" alt=""></div>
+                    <div><img src="images/outer_detail/outer2_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+            <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+            <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+            <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+    
+    <div class="modal" id="modal_outer3">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="images/outer_detail/outer3_1.jpeg" alt=""></div>
+                    <div><img src="images/outer_detail/outer3_2.jpeg" alt=""></div>
+                    <div><img src="images/outer_detail/outer3_3.jpeg" alt=""></div>
+                    <div><img src="images/outer_detail/outer3_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+            <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+            <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+            <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+
+    <!-- Modal_Bottom -->
+    <div class="modal" id="modal_bottom1">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="images/bottom_detail/bottom1_1.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom1_2.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom1_3.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom1_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+            <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+            <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+            <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+    <div class="modal" id="modal_bottom2">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="images/bottom_detail/bottom2_1.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom2_2.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom2_3.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom2_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+            <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+            <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+            <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+    <div class="modal" id="modal_bottom3">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="images/bottom_detail/bottom3_1.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom3_2.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom3_3.jpeg" alt=""></div>
+                    <div><img src="images/bottom_detail/bottom3_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+            <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+            <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+            <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+
+    <!-- Mdoal_Top -->
+    <div class="modal" id="modal_top1">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="images/top_detail/top1_1.jpeg" alt=""></div>
+                    <div><img src="images/top_detail/top1_2.jpeg" alt=""></div>
+                    <div><img src="images/top_detail/top1_3.jpeg" alt=""></div>
+                    <div><img src="images/top_detail/top1_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+            <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+            <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+            <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+    <div class="modal" id="modal_top2">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="images/top_detail/top2_1.jpeg" alt=""></div>
+                    <div><img src="images/top_detail/top2_2.jpeg" alt=""></div>
+                    <div><img src="images/top_detail/top2_3.jpeg" alt=""></div>
+                    <div><img src="images/top_detail/top2_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+            <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+            <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+            <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+    <div class="modal" id="modal_top3">
+        <div class="modal_content">
+            <div class="detail_title">
+                <span>[2color]웨어 브러쉬 밀크 워싱 와이드 데님 팬츠</span>
+            </div>
+            <div class="product_comment">
+                <div class="detail_img">
+                    <div><img src="static/images/top_detail/top3_1.jpeg" alt=""></div>
+                    <div><img src="static/images/top_detail/top3_2.jpeg" alt=""></div>
+                    <div><img src="static/images/top_detail/top3_3.jpeg" alt=""></div>
+                    <div><img src="static/images/top_detail/top3_4.jpeg" alt=""></div>
+                </div>
+            </div>
+            <button type="button" class="modalClose button-48"><span class="text">Close</span></button>
+        </div>
+        <div class="detail_comments">
+            <p>-세미 와이드 핏으로 다리가 길어보이는 효과를 줄 수 있습니다.</p>
+            <p>-유니크한 워싱 느낌으로 세련된 연출을 할 수 있습니다.</p>
+            <p>-컬러마다 각각의 느낌으로 자연스러운 분위기를 내 줄 수 있습니다.</p>
+            <p>-23트렌디한 와이드 팬츠로 제작되어 과하지 않고 트렌디한 무드를 주는 제품입니다.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+
+    <!-- Side Bar -->
+    <div id="sideBar" class="sideBar_none">
+        <div id="sideBar_title" onclick="moveTop()"><span>Last Dance</span></div>
+        <div id="sideBar_menue">
+            <ul>
+                <li onclick="scrollMove_best()" id="best_sideBar"><span>Best</span></li>
+                <li onclick="scrollMove_new()" id="new_sideBar"><span>New</span></li>
+                <li onclick="scrollMove_category()" id="category_sideBar"><span>Category</span></li>
+                <li><span>My</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- script connection -->
+    <script src="static/js/project_modal.js"></script>
+    <script src="static/js/best_category.js"></script>
+    <script src="static/js/navBar.js"></script>
+    <script src="static/js/new.js"></script>
+    <script>
+        function BuyButton() {
+
+            if (confirm("구매하시겠습니까?")) {
+
+                alert("구매가 완료되었습니다.");
+            } else {
+
+                alert("취소되었습니다.");
+            }
+
+        }
+    </script>
+    <script>
+        function rvButton() {
+            alert("작성완료")
+        }
+    </script>
+</body>
+
+</html>
