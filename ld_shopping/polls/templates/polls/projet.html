@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="static/css/button.css">
     <link rel="stylesheet" href="static/css/tab.css">
     <link rel="stylesheet" href="static/css/reView.css">
+    <link rel="stylesheet" href="{% static 'css/star.css' %}">
 </head>
 
 <body>
@@ -419,10 +420,10 @@
                     <div style="height: 500px; overflow: auto">
                     <p><table border="1" width="500">
                     <h3 style="color: white;">{{ review.u_id}} </h3>
-                    <h6 style="color: grey;">{{ review.r_star }}</h6>
-                    <h5 style="color: grey;">{{ review.r_title }}</h5>
-                    <h6 style="color: grey;">{{ review.r_size }}</h6>
+                    <h5 style="color: grey;">{{ review.u_size }}</h4>
                     <div><img src="static/images/outer_detail/outer1_1.jpeg" width="50"></div>
+                    <h6 style="color: grey;">{{ review.r_size }}</h6>
+                    <h6 style="color: grey;">{{ review.r_star }}점</h6>
                     <h4 style="color: white;">{{ review.r_content }}</h4>
                     {% endfor %}
                 </table>

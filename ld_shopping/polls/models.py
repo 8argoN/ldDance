@@ -43,8 +43,15 @@ class Review(models.Model):
     u_id=  models.ForeignKey(User, on_delete=models.CASCADE)
     r_title= models.CharField(max_length=200)
     r_content= models.CharField(max_length=200)
-    r_star= models.CharField(max_length=200)
-    r_size= models.CharField(max_length=200)
+    u_size=models.CharField(max_length=200)
+    r_star=  models.IntegerField(choices=((1, '1점'), (2, '2점'), (3, '3점'), (4, '4점'), (5, '5점')), default=5)
+    SIZES = (
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large'),
+        ('XL', 'Extra Large'),
+    )
+    r_size = models.CharField(max_length=2, choices=SIZES)
     def __str__(self):
         return self.r_code
     

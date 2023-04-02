@@ -1,0 +1,16 @@
+.star-rating input[type="radio"] {
+    display: none; /* 별점 선택 항목은 표시하지 않음 */
+}
+
+.star-rating label {
+    display: inline-block;
+    width: 30px; /* 별점 선택 항목의 크기 지정 */
+    height: 30px;
+    background: url('https://cdn.pixabay.com/photo/2014/04/02/10/17/star-303363_960_720.png') no-repeat; /* 픽사베이에서 다운로드한 별점 아이콘 이미지 적용 */
+    background-size: cover;
+}
+
+
+.star-rating input[type="radio"]:checked + label {
+    background-color: yellow; /* 선택된 별점 아이콘 강조 */
+}

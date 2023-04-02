@@ -1,0 +1,30 @@
+.star-rating {
+    display: inline-block;
+    font-size: 0;
+  }
+  
+  .star-rating input {
+    display: none;
+  }
+  
+  .star-rating label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://cdn.pixabay.com/photo/2014/12/21/23/41/star-575187_960_720.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+  
+  .star-rating input:checked ~ label {
+    background-image: url("https://cdn.pixabay.com/photo/2014/12/21/23/41/star-575187_960_720.png");
+  }
+  
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    background-image: url("https://cdn.pixabay.com/photo/2014/12/21/23/41/star-575187_960_720.png");
+  }
+  
